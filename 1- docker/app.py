@@ -1,9 +1,5 @@
 import time
 from crate import client
-import csv
-import random
-from datetime import datetime
-import os.path as path
 
 
 def connectCrate():
