@@ -1,0 +1,23 @@
+version: "3.9"
+services:
+  python:
+    build: .
+    volumes:
+      - nerea_python:/app
+  crate:
+    image: 'crate'
+    ports:
+      - "4200:4200"
+    volumes:
+      - nerea_crate:/data
+    command: ["crate",
+              "-Cnetwork.host=_site_",
+              "-Cnode.data=true",
+              ]
+    environment:
+      - CRATE_HEAP_SIZE=2g
+volumes:
+  nerea_crate:
+    external: False
+  nerea_python:
+    external: False

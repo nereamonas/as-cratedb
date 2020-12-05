@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: client-pod-python
+  labels:
+    component: python
+spec:
+    restartPolicy: OnFailure
+    containers:
+      - name: python
+        image: nereamonas/as-python:latest
